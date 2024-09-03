@@ -35,6 +35,7 @@ export default function Home() {
   };
 
   const handleEditUser = (userData: any) => {
+    console.log(userData, ">>>>")
     dispatch(updateUser(userData));
     setEditUser(null);
   };

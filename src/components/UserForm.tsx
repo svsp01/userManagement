@@ -85,10 +85,16 @@ export function UserForm({ user, onSubmit, onClose }: UserFormProps) {
   });
 
   function handleSubmit(values: z.infer<typeof formSchema>) {
-    onSubmit({
-      ...values,
-      id: `${values.name} + 123`,
-    });
+    if (values?.id) {
+      onSubmit({
+        ...values,
+      });
+    } else {
+      onSubmit({
+        ...values,
+        id: `${values.name}123`,
+      });
+    }
   }
 
   return (

@@ -33,7 +33,10 @@ const userSlice = createSlice({
       state.users.push(action.payload);
     },
     updateUser: (state, action: PayloadAction<User>) => {
+      console.log(action.payload.id, "ActionId")
+      
       const index = state.users.findIndex(user => user.id === action.payload.id);
+      console.log(index, "ActionId")
       if (index !== -1) {
         state.users[index] = action.payload;
       }
